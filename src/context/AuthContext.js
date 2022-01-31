@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
 
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const recoveredUser = localStorage.getItem("user");
@@ -21,14 +21,14 @@ export const AuthProvider = ({ children }) => {
 
     const login = (email, password) => {
         if (email === "admin@example.com" && password === "abc123") {
-            const loggedUser = JSON.stringify({
+            const loggedUser = {
                 id: 1,
                 email: email,
                 name: "Admin",
                 permission: 1,
-            });
+            };
 
-            localStorage.setItem("user", loggedUser);
+            localStorage.setItem("user", JSON.stringify(loggedUser));
             setUser(loggedUser);
 
             navigate("/");
@@ -43,8 +43,12 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("user");
         setUser(null);
 
-        navigate("login");
+        navigate("/login");
     };
+
+    if (loading) {
+        return <div>Carregando...</div>;
+    }
 
     return (
         <AuthContext.Provider

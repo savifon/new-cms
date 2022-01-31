@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
-    const navigate = useNavigate();
     const { authenticated, login } = useContext(AuthContext);
 
     if (authenticated) {
-        navigate("/");
+        return <Navigate to="/" />;
     }
 
     const handleSubmit = (event) => {
@@ -18,6 +17,7 @@ const Login = () => {
         const email = data.get("email");
         const password = data.get("password");
 
+        // login(email, password);
         if (!login(email, password)) {
             alert("erro!");
         }

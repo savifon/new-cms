@@ -30,6 +30,7 @@ const AppRoutes = () => {
         <Router>
             <AuthProvider>
                 <Routes>
+                    <Route exact path="/login" element={<Login />} />
                     <Route
                         exact
                         path="/"
@@ -39,7 +40,6 @@ const AppRoutes = () => {
                             </Private>
                         }
                     />
-                    <Route exact path="/login" element={<Login />} />
                 </Routes>
             </AuthProvider>
         </Router>
