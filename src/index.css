@@ -1,7 +1,9 @@
-/* @tailwind base; */
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
 
 body {
     margin: 0;
@@ -9,7 +11,7 @@ body {
 }
 
 * {
-    font-family: sans-serif;
+    font-family: "Poppins", sans-serif;
     outline: none;
     box-sizing: border-box;
 }

@@ -4,12 +4,20 @@ import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import Footer from "../../components/Footer";
 
-const Admin = () => {
+const Admin = (props) => {
+    const module = props.module;
+
     return (
         <>
             <Header />
-            <h1>Admin</h1>
-            <Menu />
+            <div className="flex">
+                <Menu />
+
+                <div className="p-4 w-[80vw]">
+                    <h1>Admin</h1>
+                    <p>{module}</p>
+                </div>
+            </div>
             <Footer />
         </>
     );

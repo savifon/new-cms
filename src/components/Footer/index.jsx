@@ -3,7 +3,9 @@ import React from "react";
 const Footer = () => {
     return (
         <>
-            <h1>Footer</h1>
+            <footer className="text-center bg-gray-100 p-2">
+                <h1>Copyright © {new Date().getFullYear()} NewCMS</h1>
+            </footer>
         </>
     );
 };
