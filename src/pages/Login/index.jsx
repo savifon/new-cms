@@ -17,7 +17,6 @@ const Login = () => {
         const email = data.get("email");
         const password = data.get("password");
 
-        // login(email, password);
         if (!login(email, password)) {
             alert("erro!");
         }
@@ -25,29 +24,52 @@ const Login = () => {
 
     return (
         <>
-            <h1>Login</h1>
+            <div className="flex flex-col gap-10 justify-center items-center h-screen">
+                <h1 className="text-3xl font-semibold">Seja bem-vindo(a)</h1>
 
-            <form onSubmit={handleSubmit} method="post">
-                <label htmlFor="email">Digite seu e-mail</label>
-                <input
-                    required
-                    type="text"
-                    name="email"
-                    id="email"
-                    autoComplete="email"
-                />
+                <form
+                    onSubmit={handleSubmit}
+                    method="post"
+                    className="flex flex-col gap-5 items-center"
+                >
+                    <label
+                        htmlFor="email"
+                        className="flex flex-col text-center"
+                    >
+                        Digite seu e-mail
+                        <input
+                            required
+                            type="text"
+                            name="email"
+                            id="email"
+                            autoComplete="email"
+                            className="border-2 rounded-md p-2 w-[300px] focus:border-gray-400"
+                        />
+                    </label>
 
-                <label htmlFor="password">Digite sua senha</label>
-                <input
-                    required
-                    type="password"
-                    name="password"
-                    id="password"
-                    autoComplete="password"
-                />
+                    <label
+                        htmlFor="password"
+                        className="flex flex-col text-center"
+                    >
+                        Digite sua senha
+                        <input
+                            required
+                            type="password"
+                            name="password"
+                            id="password"
+                            autoComplete="password"
+                            className="border-2 rounded-md p-2 w-[300px] focus:border-gray-400"
+                        />
+                    </label>
 
-                <button type="submit">Entrar</button>
-            </form>
+                    <button
+                        type="submit"
+                        className="bg-gray-800 text-white font-semibold p-2 rounded-md w-[300px] border-2 border-gray-900 hover:bg-gray-900 hover:border-gray-600 hover:shadow-xl transition-all"
+                    >
+                        Entrar
+                    </button>
+                </form>
+            </div>
         </>
     );
 };
