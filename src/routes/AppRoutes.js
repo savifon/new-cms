@@ -36,7 +36,7 @@ const AppRoutes = () => {
                         path="/"
                         element={
                             <Private>
-                                <Admin module="dashboard" />
+                                <Admin module="dashboard" title="Dashboard" />
                             </Private>
                         }
                     />
@@ -45,7 +45,7 @@ const AppRoutes = () => {
                         path="/users"
                         element={
                             <Private>
-                                <Admin module="users" />
+                                <Admin module="users" title="Usuários" />
                             </Private>
                         }
                     />
@@ -54,7 +54,7 @@ const AppRoutes = () => {
                         path="/products"
                         element={
                             <Private>
-                                <Admin module="products" />
+                                <Admin module="products" title="Produtos" />
                             </Private>
                         }
                     />

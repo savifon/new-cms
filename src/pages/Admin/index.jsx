@@ -5,7 +5,7 @@ import Menu from "../../components/Menu";
 import Footer from "../../components/Footer";
 
 const Admin = (props) => {
-    const module = props.module;
+    const { module, title } = props;
 
     return (
         <>
@@ -14,7 +14,7 @@ const Admin = (props) => {
                 <Menu />
 
                 <div className="p-4 w-[80vw]">
-                    <h1>Admin</h1>
+                    <h1>{title}</h1>
                     <p>{module}</p>
                 </div>
             </div>
