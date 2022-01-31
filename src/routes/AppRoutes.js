@@ -28,16 +28,16 @@ const AppRoutes = () => {
         <Router>
             <AuthProvider>
                 <Routes>
-                    <Route exact path="/" element={<Admin />} />
                     <Route
                         exact
-                        path="/login"
+                        path="/"
                         element={
                             <Private>
-                                <Login />
+                                <Admin />
                             </Private>
                         }
                     />
+                    <Route exact path="/login" element={<Login />} />
                 </Routes>
             </AuthProvider>
         </Router>
