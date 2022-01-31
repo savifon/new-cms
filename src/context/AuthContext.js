@@ -32,7 +32,11 @@ export const AuthProvider = ({ children }) => {
             setUser(loggedUser);
 
             navigate("/");
+
+            return true;
         }
+
+        return false;
     };
 
     const logout = () => {

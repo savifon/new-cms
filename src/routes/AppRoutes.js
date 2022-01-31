@@ -22,6 +22,8 @@ const AppRoutes = () => {
         if (!authenticated) {
             return <Navigate to="/login" />;
         }
+
+        return children;
     };
 
     return (
