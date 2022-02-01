@@ -1,0 +1,149 @@
+:root {
+    --bgColor: #29bcba;
+    --titleColor: #ffffff;
+    --textColor: #ffffff;
+
+    --headerBgColor: #23a5a3;
+    --headerColor: #ffffff;
+
+    --evenTrBg: rgba(255, 255, 255, 0.1);
+
+    --textTag: #313131;
+    --bgTag: #ffffff;
+
+    --boxShadow: #313131;
+
+    --radius: 5px;
+}
+
+.dataTable {
+    background: var(--bgColor);
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    /* max-width: 90vw; */
+}
+
+.dataTable .headerTable {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0 1rem 0;
+    gap: 2.5rem;
+}
+
+.dataTable .headerTable h3 {
+    color: var(--headerColor);
+}
+
+.dataTable .headerTable > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.dataTable table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.dataTable table thead {
+    background: var(--headerBgColor);
+    color: var(--headerColor);
+}
+
+.dataTable table th,
+.dataTable table td {
+    padding: 1rem;
+    word-break: break-word;
+}
+
+.dataTable table th {
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.dataTable table td > span {
+    color: var(--textColor);
+}
+
+.dataTable table tbody tr:nth-child(even) {
+    background: var(--evenTrBg);
+}
+
+.dataTable table td.tag > span {
+    padding: 5px;
+    border-radius: var(--radius);
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+    background: var(--bgTag);
+    color: var(--textTag);
+}
+
+@media screen and (min-width: 1025px) {
+    .dataTable table tr.lastLarger > th:last-child {
+        width: 35vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .dataTable {
+        padding: 1rem;
+    }
+
+    .dataTable h3 {
+        text-align: center;
+    }
+
+    .dataTable table {
+        border: 0;
+    }
+
+    .dataTable .headerTable > div {
+        justify-content: center;
+    }
+
+    .dataTable table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .dataTable table th,
+    .dataTable table td {
+        padding: 0.5rem 1rem;
+    }
+
+    .dataTable table tr {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 10px -10px var(--boxShadow);
+        border-radius: var(--radius);
+    }
+
+    .dataTable table td {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .dataTable table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
