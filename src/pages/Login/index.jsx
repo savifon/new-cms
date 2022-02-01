@@ -43,6 +43,7 @@ const Login = () => {
                             name="email"
                             id="email"
                             autoComplete="email"
+                            value="admin@example.com"
                             className="border-2 rounded-md p-2 w-[300px] focus:border-gray-400"
                         />
                     </label>
@@ -58,6 +59,7 @@ const Login = () => {
                             name="password"
                             id="password"
                             autoComplete="password"
+                            value="abc123"
                             className="border-2 rounded-md p-2 w-[300px] focus:border-gray-400"
                         />
                     </label>
