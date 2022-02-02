@@ -18,7 +18,7 @@
 
 .dataTable {
     background: var(--bgColor);
-    padding: 0.5rem;
+    padding: 0;
     border-radius: var(--radius);
     /* max-width: 90vw; */
 }
@@ -28,7 +28,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
     gap: 2.5rem;
 }
 
@@ -58,7 +58,7 @@
 
 .dataTable table th,
 .dataTable table td {
-    padding: 1rem;
+    padding: 0.5rem;
     word-break: break-word;
 }
 
@@ -94,7 +94,7 @@
 
 @media screen and (max-width: 1024px) {
     .dataTable {
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     .dataTable h3 {
@@ -122,13 +122,13 @@
 
     .dataTable table th,
     .dataTable table td {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
     }
 
     .dataTable table tr {
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         box-shadow: 0 10px 10px -10px var(--boxShadow);
         border-radius: var(--radius);
     }

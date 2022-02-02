@@ -51,6 +51,18 @@ const AppRoutes = () => {
                     />
                     <Route
                         exact
+                        path="/users/edit"
+                        element={
+                            <Private>
+                                <Admin
+                                    module="users/edit"
+                                    title="Editar Usuário"
+                                />
+                            </Private>
+                        }
+                    />
+                    <Route
+                        exact
                         path="/products"
                         element={
                             <Private>
