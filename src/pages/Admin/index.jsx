@@ -16,10 +16,12 @@ const Admin = (props) => {
                 return <Users />;
 
             case "users/edit":
-                return <Form title="FORM PARA EDITAR USUÁRIO!!!!!!" />;
+                return (
+                    <Form title="FORM PARA EDITAR USUÁRIO! (em breve completo)" />
+                );
 
             default:
-                return <p>Nenhum!!!</p>;
+                return <p>Nada aqui ainda (em desenvolvimento!)</p>;
         }
     };
 
