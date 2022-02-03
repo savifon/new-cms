@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Table from "../Table/Table";
+import Table from "../../Table/Table";
 
-import { supabase } from "../../api/supabaseClient";
+import { supabase } from "../../../api/supabaseClient";
 
 const Users = () => {
     const navigate = useNavigate();
@@ -49,7 +49,7 @@ const Users = () => {
             .then(({ data }) => {
                 // console.log(data);
                 // navigate("/users/edit", { data: data });
-                navigate("/users/edit", { state: { data: data } });
+                navigate("/users/edit", { state: { data: data[0] } });
                 // setUserUpdate(data);
             });
     };

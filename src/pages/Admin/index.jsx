@@ -6,7 +6,8 @@ import Menu from "../../components/Menu";
 import Footer from "../../components/Footer";
 
 import Form from "../../components/Form";
-import Users from "../../components/Users";
+import Users from "../../components/Users/UsersList";
+import User from "../../components/Users/UsersItem";
 
 const Admin = (props) => {
     const { module, title } = props;
@@ -20,7 +21,7 @@ const Admin = (props) => {
 
             case "users/edit":
                 return (
-                    <Form
+                    <User
                         title="FORM PARA EDITAR USUÁRIO! (em breve completo)"
                         data={data}
                     />
