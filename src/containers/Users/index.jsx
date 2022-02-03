@@ -41,7 +41,17 @@ const Users = () => {
         //         console.log("Update: ", data);
         //         getUsers();
         //     });
-        return navigate(`/users/edit?id=${id}`);
+
+        await supabase
+            .from("users")
+            .select("*")
+            .eq("id", id)
+            .then(({ data }) => {
+                // console.log(data);
+                // navigate("/users/edit", { data: data });
+                navigate("/users/edit", { state: { data: data } });
+                // setUserUpdate(data);
+            });
     };
 
     if (loading) {

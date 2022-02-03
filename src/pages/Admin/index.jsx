@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
@@ -9,6 +10,8 @@ import Users from "../../containers/Users";
 
 const Admin = (props) => {
     const { module, title } = props;
+    const location = useLocation();
+    const data = location.state?.data;
 
     const renderModule = (module) => {
         switch (module) {
@@ -17,7 +20,10 @@ const Admin = (props) => {
 
             case "users/edit":
                 return (
-                    <Form title="FORM PARA EDITAR USUÁRIO! (em breve completo)" />
+                    <Form
+                        title="FORM PARA EDITAR USUÁRIO! (em breve completo)"
+                        data={data}
+                    />
                 );
 
             default:
