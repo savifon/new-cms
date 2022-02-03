@@ -6,7 +6,7 @@ import Menu from "../../components/Menu";
 import Footer from "../../components/Footer";
 
 import Form from "../../components/Form";
-import Users from "../../containers/Users";
+import Users from "../../components/Users";
 
 const Admin = (props) => {
     const { module, title } = props;
