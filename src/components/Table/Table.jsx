@@ -44,9 +44,10 @@ const Table = (props) => {
                         </td>
                     ))}
                     {actions ? (
-                        <td>
+                        <td className="space-x-2">
                             {actions.edit ? (
                                 <button
+                                    className="rounded-md bg-white bg-opacity-10 py-1 px-2"
                                     onClick={() =>
                                         actions.edit.function(data["id"])
                                     }
@@ -57,7 +58,12 @@ const Table = (props) => {
                                 ""
                             )}
                             {actions.del ? (
-                                <Link to={actions.del}>Excluir</Link>
+                                <Link
+                                    className="rounded-md bg-white bg-opacity-10 py-1 px-2"
+                                    to={actions.del}
+                                >
+                                    Excluir
+                                </Link>
                             ) : (
                                 ""
                             )}
