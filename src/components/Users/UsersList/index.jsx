@@ -20,37 +20,18 @@ const Users = () => {
             .select("id, user_name, full_name, email")
             .order("id", { ascending: true })
             .then(({ data }) => {
-                // console.log("Dados: ", data);
                 setUsers(data);
                 setLoading(false);
             });
     };
 
     const setUser = async (id) => {
-        // const updates = {
-        //     id: id,
-        //     email: `novo${crypto.randomUUID()}@email.com.br`,
-        // };
-
-        // await supabase
-        //     .from("users")
-        //     .upsert(updates, {
-        //         returning: "minimal",
-        //     })
-        //     .then(({ data }) => {
-        //         console.log("Update: ", data);
-        //         getUsers();
-        //     });
-
         await supabase
             .from("users")
             .select("*")
             .eq("id", id)
             .then(({ data }) => {
-                // console.log(data);
-                // navigate("/users/edit", { data: data });
                 navigate("/users/edit", { state: { data: data[0] } });
-                // setUserUpdate(data);
             });
     };
 
