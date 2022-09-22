@@ -1,10 +1,26 @@
 import React from "react";
 
 const Dashboard = () => {
+    const arr = [];
+    for (var i = 1; i <= 12; i++) {
+        arr.push(i.toString());
+    }
+
     return (
-        <>
-            <h1>Dashboard</h1>
-        </>
+        <div className="grid grid-cols-4 gap-2">
+            {arr.map((item) => (
+                <div
+                    key={item}
+                    className="bg-slate-600 text-white flex flex-col gap-5 p-4 rounded-md"
+                >
+                    <span className="text-xl font-bold">Card {item}</span>
+                    <span>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Harum accusantium...
+                    </span>
+                </div>
+            ))}
+        </div>
     );
 };
 
