@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import Footer from "../../components/Footer";
 
+import Dashboard from "../../components/Dashboard";
 import Form from "../../components/Form";
 import Users from "../../components/Users/UsersList";
 import User from "../../components/Users/UsersItem";
@@ -22,13 +23,13 @@ const Admin = (props) => {
             case "users/edit":
                 return (
                     <User
-                        title="FORM PARA EDITAR USUÁRIO! (em breve completo)"
+                        title="Preencha os campos abaixo para editar o usuário"
                         data={data}
                     />
                 );
 
             default:
-                return <p>Nada aqui ainda (em desenvolvimento!)</p>;
+                return <Dashboard />;
         }
     };
 
@@ -38,16 +39,13 @@ const Admin = (props) => {
             <div className="flex">
                 <Menu />
 
-                <div className="p-4 w-[80vw]">
-                    <h1>Título: {title}</h1>
-                    <p>Módulo: {module}</p>
+                <div className="p-4 w-[80vw] flex flex-col gap-4">
+                    <div>
+                        <h1 className="text-2xl font-bold">{title}</h1>
+                        <pre>path: {module}</pre>
+                    </div>
 
-                    <br />
-                    <hr />
-                    <p>Módulo renderizado:</p>
-                    <hr />
-                    <br />
-                    {renderModule(module)}
+                    <div>{renderModule(module)}</div>
                 </div>
             </div>
             <Footer />
