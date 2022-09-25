@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Table from "../../Table/Table";
-
-import { supabase } from "../../../api/supabaseClient";
+import { getUser, getUsers } from "../../../api/userService";
 
 const Users = () => {
     const navigate = useNavigate();
@@ -11,28 +10,25 @@ const Users = () => {
     const [users, setUsers] = useState(null);
 
     useEffect(() => {
-        getUsers();
+        fetchUsers();
     }, [setUsers]);
 
-    const getUsers = async () => {
-        await supabase
-            .from("users")
-            .select("id, user_name, full_name, email")
-            .order("id", { ascending: true })
-            .then(({ data }) => {
-                setUsers(data);
+    const fetchUsers = async () => {
+        setLoading(true);
+        await getUsers()
+            .then((response) => {
+                setUsers(response.data);
+            })
+            .finally(() => {
                 setLoading(false);
             });
     };
 
     const setUser = async (id) => {
-        await supabase
-            .from("users")
-            .select("*")
-            .eq("id", id)
-            .then(({ data }) => {
-                navigate("/users/edit", { state: { data: data[0] } });
-            });
+        setLoading(true);
+        await getUser(id).then(({ data }) => {
+            navigate("/users/edit", { state: { data: data[0] } });
+        });
     };
 
     if (loading) {

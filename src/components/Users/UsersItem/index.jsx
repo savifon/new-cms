@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { supabase } from "../../../api/supabaseClient";
+import { updateUser } from "../../../api/userService";
 
 const User = (props) => {
     const { title, data } = props;
@@ -17,14 +16,11 @@ const User = (props) => {
         setLoading(true);
 
         if (username && fullName && email) {
-            response = await supabase
-                .from("users")
-                .update({
-                    user_name: username,
-                    full_name: fullName,
-                    email: email,
-                })
-                .eq("id", data.id);
+            response = await updateUser(data.id, {
+                user_name: username,
+                full_name: fullName,
+                email: email,
+            });
         } else {
             alert("Preencha todos os campos!");
         }
@@ -43,20 +39,6 @@ const User = (props) => {
 
                 <form onSubmit={handleSubmit} method="post">
                     <div className="flex items-start flex-wrap gap-x-[10px] gap-y-[15px] mb-3">
-                        <input type="hidden" name="id" value={data.id} />
-
-                        <label htmlFor="created_at" className="flex flex-col">
-                            Criado em
-                            <input
-                                disabled
-                                type="text"
-                                name="created_at"
-                                id="created_at"
-                                value={data.created_at}
-                                className="border-2 rounded-md p-2 w-[300px] focus:border-gray-400 opacity-50"
-                            />
-                        </label>
-
                         <label htmlFor="user_name" className="flex flex-col">
                             Nome de usuário
                             <input
