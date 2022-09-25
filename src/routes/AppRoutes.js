@@ -61,15 +61,6 @@ const AppRoutes = () => {
                             </Private>
                         }
                     />
-                    <Route
-                        exact
-                        path="/products"
-                        element={
-                            <Private>
-                                <Admin module="products" title="Produtos" />
-                            </Private>
-                        }
-                    />
                 </Routes>
             </AuthProvider>
         </Router>

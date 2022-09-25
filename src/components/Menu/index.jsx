@@ -14,18 +14,6 @@ const Menu = () => {
                 >
                     Users
                 </Link>
-                <Link className="p-2 hover:bg-gray-800 transition-all" to="#">
-                    Products
-                </Link>
-                <Link
-                    className="p-2 bg-gray-500 hover:bg-gray-800 transition-all"
-                    to="#"
-                >
-                    Opção 4
-                </Link>
-                <Link className="p-2 hover:bg-gray-800 transition-all" to="#">
-                    Opção 5
-                </Link>
             </nav>
         </>
     );
