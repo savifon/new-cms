@@ -39,7 +39,7 @@ const Admin = (props) => {
             <div className="flex">
                 <Menu />
 
-                <div className="p-4 w-[80vw] flex flex-col gap-4">
+                <div className="p-4 w-[85vw] flex flex-col gap-4">
                     <div>
                         <h1 className="text-2xl font-bold">{title}</h1>
                         <pre>path: {module}</pre>

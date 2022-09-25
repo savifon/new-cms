@@ -7,7 +7,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
             {arr.map((item) => (
                 <div
                     key={item}
@@ -20,6 +20,7 @@ const Dashboard = () => {
                     </span>
                 </div>
             ))}
+            <div className="h-[299999px]">asd</div>
         </div>
     );
 };
